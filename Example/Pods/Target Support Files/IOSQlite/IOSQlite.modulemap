@@ -1,0 +1,6 @@
+framework module IOSQlite {
+  umbrella header "IOSQlite-umbrella.h"
+
+  export *
+  module * { export * }
+}

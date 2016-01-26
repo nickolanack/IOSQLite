@@ -5,6 +5,7 @@
 //  Created by nickolanack on 01/26/2016.
 //  Copyright (c) 2016 nickolanack. All rights reserved.
 //
+#import "Database.h"
 
 @import XCTest;
 
@@ -28,7 +29,12 @@
 
 - (void)testExample
 {
-    XCTFail(@"No implementation for \"%s\"", __PRETTY_FUNCTION__);
+    
+    Database *db=[[Database alloc] init];
+    [db open:@"Test"];
+    
+    
+    
 }
 
 @end
