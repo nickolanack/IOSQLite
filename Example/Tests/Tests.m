@@ -32,8 +32,8 @@
     
     Database *db=[[Database alloc] init];
     [db open:@"Test"];
-    
-    [db listTables];
+    [db execute:@"CREATE TABLE IF NOT EXISTS users (userid INTEGER PRIMARY KEY AUTOINCREMENT, geolid INTEGER DEFAULT -1, deviceid INTEGER DEFAULT -1,  uname TEXT, fullname TEXT, password TEXT, data TEXT, passcode TEXT, email TEXT);"];
+    NSLog(@"%@", [db listTables]);
     
 }
 
