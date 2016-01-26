@@ -33,7 +33,7 @@
     Database *db=[[Database alloc] init];
     [db open:@"Test"];
     
-    
+    [db listTables];
     
 }
 
