@@ -12,4 +12,4 @@ script:
 #- set -o pipefail && xcodebuild test -workspace Example/IOSQlite.xcworkspace -scheme IOSQlite-Example -sdk iphonesimulator 8.1 | xcpretty
 #- set -o pipefail && xcodebuild test -workspace Example/IOSQlite.xcworkspace -scheme IOSQlite-Example -sdk iphonesimulator ONLY_ACTIVE_ARCH=NO | xcpretty
 - set -o pipefail && xcodebuild test -workspace Example/IOSQlite.xcworkspace -scheme IOSQlite-Example -destination 'platform=iOS Simulator,name=iPhone 6' | xcpretty
-- pod lib lint --allow-warnings
+- pod lib lint --only-errors

@@ -13,8 +13,14 @@
 
 @property NSDictionary *tableDefinitions;
 
+/**
+ opens or creates a sqlite database file in the users documents folder. 
+ with the file named: ~/[name].db all Database instances will share the underlying
+ sqlite database object for a given name, 
+ */
 -(bool) open:(NSString *) name;
 -(void)close;
+
 -(ResultSet *)query:(NSString *)query;
 
 /**
