@@ -40,8 +40,7 @@
     return dictionary;
 }
 /*
- * opening a database that is already open, will result in two Database objects sharing the sqlite_3 db. otherwise 
- * databases queries may become thread locked...
+ * opening a database that is already open, will result in two Database objects sharing the sqlite_3 db. it is possible for queries may become thread locked...
  */
 -(bool)open:(NSString *)name{
     sqlite3* db=nil;
@@ -112,11 +111,27 @@
 -(void *)query:(NSString *)query iterate:(void (^)(NSDictionary *))callback{
     ResultSet *r=[self query:query];
     if(r){
-        [r interate:callback];
+        [r iterate:callback];
     }else{
         @throw [[NSException alloc] initWithName:@"Sql Error" reason:[self error] userInfo:nil];
     }
 }
+
+-(void *)query:(NSString *)query first:(void (^)(NSDictionary *))callback{
+    
+    ResultSet *r=[self query:query];
+    if(r){
+        if([r hasNext]){
+            callback([r nextAssoc]);
+        }else{
+            callback(nil);
+        }
+    }else{
+        @throw [[NSException alloc] initWithName:@"Sql Error" reason:[self error] userInfo:nil];
+    }
+    
+}
+
 
 
 -(bool)execute:(NSString *)command{

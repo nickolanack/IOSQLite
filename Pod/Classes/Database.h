@@ -17,7 +17,16 @@
 -(void)close;
 -(ResultSet *)query:(NSString *)query;
 
+/**
+ executes the callback block with an associative dictionary of key values pairs for 
+ each row
+ */
 -(void *)query:(NSString *)query iterate:(void (^)(NSDictionary *))callback;
+/**
+ executes the callback block with an associative dictionary of key values pairs for the first row
+ or, if the result is empty, it is called with nil
+ */
+-(void *)query:(NSString *)query first:(void (^)(NSDictionary *))callback;
 
 -(bool)execute:(NSString *)command;
 

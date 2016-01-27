@@ -132,24 +132,6 @@
     
 }
 
--(id)valueAt:(int) index{
-    
-    if(![self hasNext])return nil;
-    id value=[self objectValueAt:index];
-    [self step];
-    return value;
-    
-}
-
--(id)lastValue{
-
-    if(![self hasNext])return nil;
-    
-    id value=[self objectValueAt:(sqlite3_column_count(self.statement)-1)];
-    [self step];
-    return value;
-    
-}
 
 
 -(void) iterate:(void (^)(NSDictionary *))callback{
@@ -159,5 +141,9 @@
     }
     
 }
+
+
+
+
 
 @end

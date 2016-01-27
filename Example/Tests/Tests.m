@@ -33,7 +33,10 @@
     
     Database *db=[[Database alloc] init];
     [db open:@"Test"];
-    XCTAssert([db execute:@"CREATE TABLE IF NOT EXISTS users (userid INTEGER PRIMARY KEY AUTOINCREMENT, uname TEXT, fullname TEXT, password TEXT, data TEXT, passcode TEXT, email TEXT);"]);
+    
+    
+    
+    XCTAssert([db execute:@"CREATE TABLE IF NOT EXISTS users (userid INTEGER PRIMARY KEY AUTOINCREMENT, uname TEXT, fullname TEXT, password TEXT, data TEXT, passcode TEXT, email TEXT)"]);
     
     
     bool insert1=[db execute:[NSString stringWithFormat:
@@ -55,10 +58,31 @@
     XCTAssert(classCheck);
     
    
+  
+    
+    [r iterate:^(NSDictionary *row) {
+        NSLog(@"%@",row);
+        XCTAssert([[row objectForKey:@"userid"] intValue]==1);
+    }];
+    
+    
+    
+    __block int i=1; //allow i to be incremented in the block
+    [db query:[NSString stringWithFormat:@"SELECT userid FROM users WHERE uname='%@'", @"userone"] iterate:^(NSDictionary *row) {
+        
+        NSLog(@"%@",row);
+        XCTAssert([[row objectForKey:@"userid"] intValue]==i);
+        i++;
+        
+    }];
+
     
     
     
     
+    
+    
+    XCTAssert([db execute:@"DROP TABLE users"]);
     
     
 }

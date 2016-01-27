@@ -19,15 +19,12 @@
 Returns the object value of the field at index 0 of the current result. This is usually the first result row, however you can iterate the entire result list using this method. 
  */
 -(id)firstValue;
-/**
- Returns the object value of the field at index (index passed as argurment) of the current result. You can iterate the entire result list using this method.
- */
--(id)valueAt:(int) index;
-/**
- Returns the object value of the last field of the current result. You can iterate the entire result list using this method.
- */
--(id)lastValue;
 
 
+/**
+ iterates the result set using a callback block, and passing a dictionary of key value pairs
+ */
 -(void) iterate:(void (^)(NSDictionary *))callback;
+
+
 @end
