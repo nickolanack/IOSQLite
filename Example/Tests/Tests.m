@@ -6,6 +6,7 @@
 //  Copyright (c) 2016 nickolanack. All rights reserved.
 //
 #import "Database.h"
+#import "ResultSet.h"
 
 @import XCTest;
 
@@ -32,8 +33,33 @@
     
     Database *db=[[Database alloc] init];
     [db open:@"Test"];
-    [db execute:@"CREATE TABLE IF NOT EXISTS users (userid INTEGER PRIMARY KEY AUTOINCREMENT, geolid INTEGER DEFAULT -1, deviceid INTEGER DEFAULT -1,  uname TEXT, fullname TEXT, password TEXT, data TEXT, passcode TEXT, email TEXT);"];
-    NSLog(@"%@", [db listTables]);
+    XCTAssert([db execute:@"CREATE TABLE IF NOT EXISTS users (userid INTEGER PRIMARY KEY AUTOINCREMENT, uname TEXT, fullname TEXT, password TEXT, data TEXT, passcode TEXT, email TEXT);"]);
+    
+    
+    bool insert1=[db execute:[NSString stringWithFormat:
+                           @"INSERT INTO users (uname, fullname, password, data, passcode, email) VALUES('%@', '%@', '%@', '%@', '%@', '%@')", @"userone", @"User One", @"e4d909c290d0fb1ca068ffaddf22cbd0", @"{}", @"12345", @"userone@test.com"]];
+    
+    bool insert2=[db execute:[NSString stringWithFormat:
+                              @"INSERT INTO users (uname, fullname, password, data, passcode, email) VALUES('%@', '%@', '%@', '%@', '%@', '%@')", @"usertwo", @"User Two", @"e4d909c290d0fb1ca068ffaddf22cbd0", @"{}", @"12345", @"usertwo@test.com"]];
+    
+    bool insert3=[db execute:[NSString stringWithFormat:
+                              @"INSERT INTO users (uname, fullname, password, data, passcode, email) VALUES('%@', '%@', '%@', '%@', '%@', '%@')", @"userthree", @"User Three", @"e4d909c290d0fb1ca068ffaddf22cbd0", @"{}", @"12345", @"userthree@test.com"]];
+    
+    XCTAssert(insert1&&insert2&insert3);
+    
+    
+    
+    ResultSet *r=[db query:[NSString stringWithFormat:@"SELECT userid FROM users WHERE uname='%@'", @"userone"]];
+    //NSString *e=[db error];
+    bool classCheck=[r isKindOfClass:[ResultSet class]];
+    XCTAssert(classCheck);
+    
+   
+    
+    
+    
+    
+    
     
 }
 

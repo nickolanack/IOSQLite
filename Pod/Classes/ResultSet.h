@@ -28,4 +28,6 @@ Returns the object value of the field at index 0 of the current result. This is 
  */
 -(id)lastValue;
 
+
+-(void) iterate:(void (^)(NSDictionary *))callback;
 @end

@@ -32,16 +32,18 @@
     [self step];
     
     return self;
-    
 
 }
 
 -(bool)hasNext{
+    
     if(self.first==SQLITE_ROW)return true;
     return false;
+    
 }
 
 -(NSArray *) next{
+    
     if(![self hasNext])return nil;
     NSMutableArray *array=[[NSMutableArray alloc] init];
     
@@ -55,9 +57,11 @@
     
     
     return [NSArray arrayWithArray:array];
+    
 }
 
 -(NSDictionary *) nextAssoc{
+    
     if(![self hasNext])return nil;
     NSMutableDictionary *dictionary=[[NSMutableDictionary alloc] init];
     
@@ -75,15 +79,18 @@
     //NSLog(@"Array %@",dictionary);
     
     return [NSDictionary dictionaryWithDictionary:dictionary];
+    
 }
 
 -(void)step{
+    
     self.first=sqlite3_step(self.statement);
    
 }
 
 
 -(id)objectValueAt:(int)index{
+    
     switch(sqlite3_column_type(self.statement, index)){
             
         case SQLITE_INTEGER:
@@ -113,13 +120,16 @@
             
     }
     return nil;
+    
 }
 
 -(id)firstValue{
+    
     if(![self hasNext])return nil;
     id value=[self objectValueAt:0];
     [self step];
     return value;
+    
 }
 
 -(id)valueAt:(int) index{
@@ -138,7 +148,16 @@
     id value=[self objectValueAt:(sqlite3_column_count(self.statement)-1)];
     [self step];
     return value;
+    
 }
 
+
+-(void) iterate:(void (^)(NSDictionary *))callback{
+
+    while([self hasNext]){
+        callback([self nextAssoc]);
+    }
+    
+}
 
 @end

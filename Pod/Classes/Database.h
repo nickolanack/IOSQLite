@@ -16,6 +16,9 @@
 -(bool) open:(NSString *) name;
 -(void)close;
 -(ResultSet *)query:(NSString *)query;
+
+-(void *)query:(NSString *)query iterate:(void (^)(NSDictionary *))callback;
+
 -(bool)execute:(NSString *)command;
 
 

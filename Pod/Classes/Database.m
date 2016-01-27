@@ -109,6 +109,15 @@
     return nil;
 }
 
+-(void *)query:(NSString *)query iterate:(void (^)(NSDictionary *))callback{
+    ResultSet *r=[self query:query];
+    if(r){
+        [r interate:callback];
+    }else{
+        @throw [[NSException alloc] initWithName:@"Sql Error" reason:[self error] userInfo:nil];
+    }
+}
+
 
 -(bool)execute:(NSString *)command{
     if(self.isOpen){
@@ -264,6 +273,7 @@
    
     return [NSArray arrayWithArray:array];
 }
+
 -(NSArray *)listTableFieldsMetadata:(NSString *)table{
     NSMutableArray *array=[[NSMutableArray alloc] init];
     ResultSet *results;
