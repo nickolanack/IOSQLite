@@ -14,10 +14,10 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '7C3E2BD2E3A6EE2C1C35EBFF'
+               BlueprintIdentifier = '5FE3FCFF814EF8078889D76A'
                BlueprintName = 'IOSQlite'
                ReferencedContainer = 'container:Pods.xcodeproj'
-               BuildableName = 'IOSQlite.framework'>
+               BuildableName = 'libIOSQlite.a'>
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

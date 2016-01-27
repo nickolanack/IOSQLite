@@ -1,6 +1,5 @@
 GCC_PREPROCESSOR_DEFINITIONS = $(inherited) COCOAPODS=1
-LD_RUNPATH_SEARCH_PATHS = $(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'
-OTHER_CFLAGS = $(inherited) -DHAVE_USLEEP=1 -DSQLITE_ENABLE_LOCKING_STYLE=0 $(inherited) -iquote "$CONFIGURATION_BUILD_DIR/IOSQlite.framework/Headers" -iquote "$CONFIGURATION_BUILD_DIR/sqlite3.framework/Headers"
-OTHER_LDFLAGS = $(inherited) -framework "IOSQlite" -framework "sqlite3"
-PODS_FRAMEWORK_BUILD_PATH = $(BUILD_DIR)/$(CONFIGURATION)$(EFFECTIVE_PLATFORM_NAME)/Pods-IOSQlite_Tests
+HEADER_SEARCH_PATHS = $(inherited) "${PODS_ROOT}/Headers/Public" "${PODS_ROOT}/Headers/Public/IOSQlite" "${PODS_ROOT}/Headers/Public/sqlite3"
+OTHER_CFLAGS = $(inherited) -DHAVE_USLEEP=1 -DSQLITE_ENABLE_LOCKING_STYLE=0 $(inherited) -isystem "${PODS_ROOT}/Headers/Public" -isystem "${PODS_ROOT}/Headers/Public/IOSQlite" -isystem "${PODS_ROOT}/Headers/Public/sqlite3"
+OTHER_LDFLAGS = $(inherited) -ObjC -l"IOSQlite" -l"sqlite3"
 PODS_ROOT = ${SRCROOT}/Pods

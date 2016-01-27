@@ -7,16 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2428D9DB43BDFF481C7BEE7B /* libPods-IOSQlite_Tests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5733A26A6E98825D294E1816 /* libPods-IOSQlite_Tests.a */; };
 		6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F5AF195388D20070C39A /* XCTest.framework */; };
 		6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F58D195388D20070C39A /* Foundation.framework */; };
 		6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6003F591195388D20070C39A /* UIKit.framework */; };
 		6003F5BA195388D20070C39A /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 6003F5B8195388D20070C39A /* InfoPlist.strings */; };
 		6003F5BC195388D20070C39A /* Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = 6003F5BB195388D20070C39A /* Tests.m */; };
-		F4B7539544C3C1B64F49B129 /* Pods_IOSQlite_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0425E209DBF06567200F549 /* Pods_IOSQlite_Tests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2D42F9995DEEE525AB7F2E7A /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		5733A26A6E98825D294E1816 /* libPods-IOSQlite_Tests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-IOSQlite_Tests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6003F58D195388D20070C39A /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		6003F58F195388D20070C39A /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		6003F591195388D20070C39A /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
@@ -30,7 +31,6 @@
 		774EEB4AA03D6B41573FE244 /* Pods-IOSQlite_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSQlite_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-IOSQlite_Tests/Pods-IOSQlite_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		7E3E656F3D23389693B84E0B /* Pods-IOSQlite_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-IOSQlite_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-IOSQlite_Tests/Pods-IOSQlite_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		9F05C9ED5F764A51A8E07F2A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
-		E0425E209DBF06567200F549 /* Pods_IOSQlite_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_IOSQlite_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +41,7 @@
 				6003F5B0195388D20070C39A /* XCTest.framework in Frameworks */,
 				6003F5B2195388D20070C39A /* UIKit.framework in Frameworks */,
 				6003F5B1195388D20070C39A /* Foundation.framework in Frameworks */,
-				F4B7539544C3C1B64F49B129 /* Pods_IOSQlite_Tests.framework in Frameworks */,
+				2428D9DB43BDFF481C7BEE7B /* libPods-IOSQlite_Tests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -74,7 +74,7 @@
 				6003F58F195388D20070C39A /* CoreGraphics.framework */,
 				6003F591195388D20070C39A /* UIKit.framework */,
 				6003F5AF195388D20070C39A /* XCTest.framework */,
-				E0425E209DBF06567200F549 /* Pods_IOSQlite_Tests.framework */,
+				5733A26A6E98825D294E1816 /* libPods-IOSQlite_Tests.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

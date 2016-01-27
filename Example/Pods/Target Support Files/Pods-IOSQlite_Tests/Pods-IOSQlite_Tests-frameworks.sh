@@ -82,12 +82,3 @@ strip_invalid_archs() {
   fi
 }
 
-
-if [[ "$CONFIGURATION" == "Debug" ]]; then
-  install_framework "Pods-IOSQlite_Tests/IOSQlite.framework"
-  install_framework "Pods-IOSQlite_Tests/sqlite3.framework"
-fi
-if [[ "$CONFIGURATION" == "Release" ]]; then
-  install_framework "Pods-IOSQlite_Tests/IOSQlite.framework"
-  install_framework "Pods-IOSQlite_Tests/sqlite3.framework"
-fi
