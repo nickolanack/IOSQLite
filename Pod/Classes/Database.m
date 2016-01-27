@@ -1,7 +1,3 @@
-
-//
-//  Database.m
-//  Abbisure
 //
 //  Created by Nick Blackwell on 2013-05-10.
 //
@@ -310,6 +306,9 @@
 
 
 -(void) checkTables{
+    
+    //TODO: move this somewhere
+    
     NSArray *tables=[self listTables];
     NSArray *keys=[self.tableDefinitions allKeys];
     //NSLog(@"All Tables %@, Expected Tables: %@",tables, keys);
@@ -420,7 +419,7 @@
 }
 +(NSString *)Escape:(NSString *)s{
   
-    //TODO: escape other characters.
+    // TODO: escape other characters.
     /*
     
     s=[s stringByReplacingOccurrencesOfString:@"\\" withString:@"\\\\"];
@@ -428,6 +427,7 @@
     s=[s stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
     s=[s stringByReplacingOccurrencesOfString:@"\r" withString:@"\\r"];
     s=[s stringByReplacingOccurrencesOfString:@"\n" withString:@"\\n"];
+     
     */
     
     s=[s stringByReplacingOccurrencesOfString:@"'" withString:@"''"];

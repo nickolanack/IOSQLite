@@ -1,6 +1,6 @@
 # IOSQlite
 
-[![CI Status](http://img.shields.io/travis/nickolanack/IOSQlite.svg?style=flat)](https://travis-ci.org/nickolanack/IOSQlite)
+[![CI Status](http://img.shields.io/travis/nickolanack/IOSQLite.svg?style=flat)](https://travis-ci.org/nickolanack/IOSQlite)
 [![Version](https://img.shields.io/cocoapods/v/IOSQlite.svg?style=flat)](http://cocoapods.org/pods/IOSQlite)
 [![License](https://img.shields.io/cocoapods/l/IOSQlite.svg?style=flat)](http://cocoapods.org/pods/IOSQlite)
 [![Platform](https://img.shields.io/cocoapods/p/IOSQlite.svg?style=flat)](http://cocoapods.org/pods/IOSQlite)
