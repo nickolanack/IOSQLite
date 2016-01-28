@@ -128,7 +128,6 @@
 				6003F5AA195388D20070C39A /* Sources */,
 				6003F5AB195388D20070C39A /* Frameworks */,
 				6003F5AC195388D20070C39A /* Resources */,
-				ABF4E537798DE0B6092B648A /* Embed Pods Frameworks */,
 				6656DCD4B61FAED8528BE6E8 /* Copy Pods Resources */,
 			);
 			buildRules = (
@@ -213,21 +212,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOSQlite_Tests/Pods-IOSQlite_Tests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		ABF4E537798DE0B6092B648A /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-IOSQlite_Tests/Pods-IOSQlite_Tests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
