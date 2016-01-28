@@ -17,7 +17,7 @@ Pod::Spec.new do |s|
 #   * Write the description between the DESC delimiters below.
 #   * Finally, don't worry about the indent, CocoaPods strips it!  
   s.description      = <<-DESC
-a small wrapper providing some objective c methods around sqlite3
+A minimal Objective-C library for sqlite3
                        DESC
 
   s.homepage         = "https://github.com/nickolanack/IOSQlite"
