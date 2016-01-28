@@ -1,5 +1,5 @@
 PODS:
-  - IOSQlite (0.1.0):
+  - IOSQlite (0.1.1):
     - sqlite3
   - sqlite3 (3.10.2):
     - sqlite3/common (= 3.10.2)
@@ -13,7 +13,7 @@ EXTERNAL SOURCES:
     :path: ../
 
 SPEC CHECKSUMS:
-  IOSQlite: 88d66040f1a3e2518c620f1e210cabe008e3e9ac
+  IOSQlite: 614fdec3f9ef35f0858754df6d9acd1aac3ea53a
   sqlite3: a31d98a32bba89e40938e11a05fe1b5bdb6c4622
 
 COCOAPODS: 0.39.0
