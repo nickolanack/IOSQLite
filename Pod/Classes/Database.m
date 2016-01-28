@@ -108,7 +108,7 @@
     return nil;
 }
 
--(void *)query:(NSString *)query iterate:(void (^)(NSDictionary *))callback{
+-(void)query:(NSString *)query iterate:(void (^)(NSDictionary *))callback{
     ResultSet *r=[self query:query];
     if(r){
         [r iterate:callback];
@@ -117,7 +117,7 @@
     }
 }
 
--(void *)query:(NSString *)query first:(void (^)(NSDictionary *))callback{
+-(void)query:(NSString *)query first:(void (^)(NSDictionary *))callback{
     
     ResultSet *r=[self query:query];
     if(r){
