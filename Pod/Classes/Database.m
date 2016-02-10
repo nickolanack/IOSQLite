@@ -44,12 +44,19 @@
  */
 -(bool)open:(NSString *)name{
     sqlite3* db=nil;
+    
+    
+    NSCharacterSet* illegalFileNameCharacters = [NSCharacterSet characterSetWithCharactersInString:@"/\\?%*|\"<>"];
+    NSString *fileName=[[name componentsSeparatedByCharactersInSet:illegalFileNameCharacters] componentsJoinedByString:@""];
+
+    
+    
     if([Database HasDatabase:name]){
         db=[Database GetDatabase:name];
     }else{
         
         NSString *documentsPath = [NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES) lastObject];
-        NSString *databasePath = [[documentsPath stringByAppendingPathComponent:name] stringByAppendingString:@".db"];
+        NSString *databasePath = [[documentsPath stringByAppendingPathComponent:fileName] stringByAppendingString:@".db"];
         
         
         int error;
