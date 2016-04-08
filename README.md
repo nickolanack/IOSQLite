@@ -9,6 +9,38 @@
 
 To run the example project, clone the repo, and run `pod install` from the Example directory first.
 
+```ObjC
+
+#import "Database.h"
+
+
+
+//...
+
+-(void)someDatabaseInitializer{
+
+	_db=[[Database alloc] init];
+    [_db open:@"Test"]; //Creates or opens a sqlite3 db file 
+
+    [_db execute:@"CREATE TABLE IF NOT EXISTS users (userid INTEGER PRIMARY KEY AUTOINCREMENT, uname TEXT, fullname TEXT, password TEXT, data TEXT, email TEXT)"];
+
+}
+
+//...
+
+-(void)someOtherLogDatabaseValuesMethod{
+
+	[_db query:[NSString stringWithFormat:@"SELECT userid FROM users WHERE uname='%@'", @"userone"] iterate:^(NSDictionary *row) {
+        
+        NSLog(@"%@",row);
+        
+    }];
+
+}
+
+
+```
+
 ## Requirements
 
 ## Installation
