@@ -1,9 +1,9 @@
 PODS:
   - IOSQlite (0.1.1):
     - sqlite3
-  - sqlite3 (3.10.2):
-    - sqlite3/common (= 3.10.2)
-  - sqlite3/common (3.10.2)
+  - sqlite3 (3.14.2):
+    - sqlite3/common (= 3.14.2)
+  - sqlite3/common (3.14.2)
 
 DEPENDENCIES:
   - IOSQlite (from `../`)
@@ -14,6 +14,8 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   IOSQlite: 614fdec3f9ef35f0858754df6d9acd1aac3ea53a
-  sqlite3: a31d98a32bba89e40938e11a05fe1b5bdb6c4622
+  sqlite3: 0da4924a394eff8e354bb63138818c870b28b097
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 14b485b2db1716c25c0c7cb11379be16caa3f80c
+
+COCOAPODS: 1.1.0.rc.2

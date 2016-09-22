@@ -1,8 +1,9 @@
 source 'https://github.com/CocoaPods/Specs.git'
+project 'IOSQLite'
 #use_frameworks!
 
 
-target 'IOSQlite_Tests', :exclusive => true do
+target 'IOSQlite_Tests' do
   pod 'IOSQlite', :path => '../'
 
   
